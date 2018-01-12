@@ -64,13 +64,18 @@ void loop() {
         lcd.setCursor(0, 0);
         lcd.print("CONTROL SERVO MOTOR:");
         lcd.setCursor(0, 1);
-        lcd.print("00");
+        lcd.print("NUMERO DE 00-99");
+        char 
         break;
       case "104D":
         lcd.setCursor(0, 1);
         lcd.print("LECTURA ULTRASONIDO:");
         lcd.setCursor(0, 1);
-        lcd.print("00");
+        Serial.print("Medida: ");  
+        int medida= sensor.ping_cm();   
+        lcd.print(medida);
+        // Serial.print(medida);    
+        // Serial.println(" cm");    
         break;
       default:
         lcd.setCursor(0, 1);
